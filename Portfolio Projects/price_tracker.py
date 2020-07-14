@@ -41,7 +41,7 @@ def send_mail():
 
     msg = f"Subject: {subject}\n\n{body}"
 
-    # format: sender, receiver, messsage text
+    # format: sender, receiver, message text
     server.sendmail(
         "SENDER_EMAIL",
         "RECEIVER_EMAIL",
