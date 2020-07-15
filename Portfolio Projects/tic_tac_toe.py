@@ -1,8 +1,8 @@
 import random
 
-user_choosed_pos = []
-player1_choosed_pos = []
-player2_choosed_pos = []
+user_chose_pos = []
+player1_chose_pos = []
+player2_chose_pos = []
 
 # For computer
 computer_pos = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
@@ -20,7 +20,7 @@ def first_printing():
 def printing_view():
     pos1 = pos2 = pos3 = pos4 = pos5 = pos6 = pos7 = pos8 = pos9 = '-'
 
-    for i in player1_choosed_pos:
+    for i in player1_chose_pos:
         if i == '9':
             pos9 = 'X'
         elif i == '8':
@@ -40,7 +40,7 @@ def printing_view():
         elif i == '1':
             pos1 = 'X'
 
-    for i in player2_choosed_pos:
+    for i in player2_chose_pos:
         if i == '9':
             pos9 = 'O'
         elif i == '8':
@@ -73,7 +73,7 @@ def game_over():
     game_over_ls = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
     game_over_ls2 = []
     for i in game_over_ls:
-        if i in user_choosed_pos:
+        if i in user_chose_pos:
             game_over_ls2.append(i)
 
     return game_over_ls == game_over_ls2
@@ -81,41 +81,41 @@ def game_over():
 
 def points_scored():
     # For Player 1
-    if ('1' in player1_choosed_pos) and ('2' in player1_choosed_pos) and ('3' in player1_choosed_pos):
+    if ('1' in player1_chose_pos) and ('2' in player1_chose_pos) and ('3' in player1_chose_pos):
         return True
-    elif ('1' in player1_choosed_pos) and ('4' in player1_choosed_pos) and ('7' in player1_choosed_pos):
+    elif ('1' in player1_chose_pos) and ('4' in player1_chose_pos) and ('7' in player1_chose_pos):
         return True
-    elif ('7' in player1_choosed_pos) and ('8' in player1_choosed_pos) and ('9' in player1_choosed_pos):
+    elif ('7' in player1_chose_pos) and ('8' in player1_chose_pos) and ('9' in player1_chose_pos):
         return True
-    elif ('3' in player1_choosed_pos) and ('6' in player1_choosed_pos) and ('9' in player1_choosed_pos):
+    elif ('3' in player1_chose_pos) and ('6' in player1_chose_pos) and ('9' in player1_chose_pos):
         return True
 
-    elif ('1' in player1_choosed_pos) and ('5' in player1_choosed_pos) and ('9' in player1_choosed_pos):
+    elif ('1' in player1_chose_pos) and ('5' in player1_chose_pos) and ('9' in player1_chose_pos):
         return True
-    elif ('3' in player1_choosed_pos) and ('5' in player1_choosed_pos) and ('7' in player1_choosed_pos):
+    elif ('3' in player1_chose_pos) and ('5' in player1_chose_pos) and ('7' in player1_chose_pos):
         return True
-    elif ('2' in player1_choosed_pos) and ('5' in player1_choosed_pos) and ('8' in player1_choosed_pos):
+    elif ('2' in player1_chose_pos) and ('5' in player1_chose_pos) and ('8' in player1_chose_pos):
         return True
-    elif ('4' in player1_choosed_pos) and ('5' in player1_choosed_pos) and ('6' in player1_choosed_pos):
+    elif ('4' in player1_chose_pos) and ('5' in player1_chose_pos) and ('6' in player1_chose_pos):
         return True
 
         # For Player 2
-    if ('1' in player2_choosed_pos) and ('2' in player2_choosed_pos) and ('3' in player2_choosed_pos):
+    if ('1' in player2_chose_pos) and ('2' in player2_chose_pos) and ('3' in player2_chose_pos):
         return True
-    elif ('1' in player2_choosed_pos) and ('4' in player2_choosed_pos) and ('7' in player2_choosed_pos):
+    elif ('1' in player2_chose_pos) and ('4' in player2_chose_pos) and ('7' in player2_chose_pos):
         return True
-    elif ('7' in player2_choosed_pos) and ('8' in player2_choosed_pos) and ('9' in player2_choosed_pos):
+    elif ('7' in player2_chose_pos) and ('8' in player2_chose_pos) and ('9' in player2_chose_pos):
         return True
-    elif ('3' in player2_choosed_pos) and ('6' in player2_choosed_pos) and ('9' in player2_choosed_pos):
+    elif ('3' in player2_chose_pos) and ('6' in player2_chose_pos) and ('9' in player2_chose_pos):
         return True
 
-    elif ('1' in player2_choosed_pos) and ('5' in player2_choosed_pos) and ('9' in player2_choosed_pos):
+    elif ('1' in player2_chose_pos) and ('5' in player2_chose_pos) and ('9' in player2_chose_pos):
         return True
-    elif ('3' in player2_choosed_pos) and ('5' in player2_choosed_pos) and ('7' in player2_choosed_pos):
+    elif ('3' in player2_chose_pos) and ('5' in player2_chose_pos) and ('7' in player2_chose_pos):
         return True
-    elif ('2' in player2_choosed_pos) and ('5' in player2_choosed_pos) and ('8' in player2_choosed_pos):
+    elif ('2' in player2_chose_pos) and ('5' in player2_chose_pos) and ('8' in player2_chose_pos):
         return True
-    elif ('4' in player2_choosed_pos) and ('5' in player2_choosed_pos) and ('6' in player2_choosed_pos):
+    elif ('4' in player2_chose_pos) and ('5' in player2_chose_pos) and ('6' in player2_chose_pos):
         return True
 
     # Frontend
@@ -148,8 +148,8 @@ while True:
             position = input(f'{player1} type position: ')
 
             if position:
-                user_choosed_pos.append(position)
-                player1_choosed_pos.append(position)
+                user_chose_pos.append(position)
+                player1_chose_pos.append(position)
                 computer_pos.remove(position)
 
             printing_view()
@@ -165,9 +165,9 @@ while True:
                     print('Ok bye. see you soon.')
                     break
                 elif 'y' in user_said:
-                    user_choosed_pos = []
-                    player1_choosed_pos = []
-                    player2_choosed_pos = []
+                    user_chose_pos = []
+                    player1_chose_pos = []
+                    player2_chose_pos = []
                     computer_pos = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
                     continue
 
@@ -179,8 +179,8 @@ while True:
                 position = input(f'{player2} type position: ')
 
             if position:
-                user_choosed_pos.append(position)
-                player2_choosed_pos.append(position)
+                user_chose_pos.append(position)
+                player2_chose_pos.append(position)
                 computer_pos.remove(position)
 
             printing_view()
@@ -196,9 +196,9 @@ while True:
                     print('Ok bye. see you soon.')
                     break
                 elif 'y' in user_said:
-                    user_choosed_pos = []
-                    player1_choosed_pos = []
-                    player2_choosed_pos = []
+                    user_chose_pos = []
+                    player1_chose_pos = []
+                    player2_chose_pos = []
                     computer_pos = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
                     continue
 
