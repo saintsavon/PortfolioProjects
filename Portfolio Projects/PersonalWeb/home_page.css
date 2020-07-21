@@ -1,0 +1,38 @@
+.nav a {
+    color: black;
+    margin-right: 100px;
+    float: right;
+    padding: 0px -40px;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: "Avenir";
+}
+.topnav a:hover {
+    color: black;
+}
+
+h1{
+    margin-top: 50px;
+    font-family: 'Helvetica Neue';
+    text-align: center;
+    padding: 10px;
+}
+
+h3{
+    font-family: 'Helvetica Neue';
+    padding: 0px 100px;
+    color: black;
+    display: flex;
+}
+
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
