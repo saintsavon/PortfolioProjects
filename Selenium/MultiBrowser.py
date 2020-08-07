@@ -9,4 +9,8 @@ driver.get("https://www.amazon.com/CableMod-PRO-ModMesh-RMi-Cable/dp/B0799F4XWF/
 
 print(driver.title)  # Title of the page
 
+print(driver.current_url)  # Returns URL
+
+#print(driver.page_source)  # HTML code of page
+
 driver.close()  # Closes browser
