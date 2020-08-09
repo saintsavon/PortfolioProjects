@@ -10,10 +10,8 @@ public class AgeGuess {
         int ageGuess;
         int birthyear;
         int age;
-
         Scanner scan = new Scanner (System.in);
         Random gen = new Random();
-
         int randnum = gen.nextInt(100);
 
         System.out.println("What is your first name?"); username = scan.nextLine();
@@ -22,6 +20,18 @@ public class AgeGuess {
         ageGuess = scan.nextInt();
         age = randnum;
 
-        System.out.println("Your guess is " + ageGuess + " years old. The correct answer was " + age +".");
-       }
+        while (ageGuess != age) {
+        // sentinel value of correct age guess to terminate loop
+            System.out.println("You guessed Wrong! Please guess again.");
+            if (ageGuess > age)
+                System.out.println("younger");
+            else
+                System.out.println("older");
+                ageGuess = scan.nextInt();
+
+            if (ageGuess == age) {
+                System.out.println("Your guess of " + ageGuess + " years old is correct!");
+            }
+        }
+    }
 }
